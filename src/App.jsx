@@ -13,11 +13,11 @@ function App() {
     <>
     <NavBar/>
     <Routes>
-      <Route path="/" element= {<Index/>} />
-      <Route path="/login" element= {<Login/>} />
+      <Route path="/" element= {<Index />} />
+      <Route path="/login" element= {<Login />} />
 
-      <Route element={<PrivateRoutes/>}>
-      <Route path="/todos" element= {<Todos/>} />
+      <Route element={<PrivateRoutes />}>
+        <Route path="/todos" element= {<Todos />} />
       </Route>
     </Routes>
     </>

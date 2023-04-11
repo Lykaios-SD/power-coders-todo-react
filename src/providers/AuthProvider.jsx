@@ -1,10 +1,9 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import AuthContext from "../context/AuthContext"
 import isEmpty from "../helpers/isEmpty"
 
 const AuthProvider = ({ children }) => {
-
-    const localUser = JSON.parse(localStorage.getItem('user'))
+    const localUser = JSON.parse(localStorage.getItem('user')) || {}
     const [currentUser, setCurrentUser] = useState(localUser)
 
     const setUserHandler = (user) => {
@@ -19,13 +18,18 @@ const AuthProvider = ({ children }) => {
         return setCurrentUser(null)
     }
 
+    useEffect(() => {
+      console.log({currentUser})
+    }, [currentUser])
+    
+
     const authValues = useMemo(() => {
         return {
             user: currentUser?.user || null,
             token: currentUser?.accessToken,
-            isAutenticated: !!currentUser?.user?.id,
+            isAuthenticated: !!currentUser?.user?.id,
             setUser: setUserHandler,
-            logout: null
+            logout: logoutHandler
         }
     })
 
