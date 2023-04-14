@@ -12,7 +12,7 @@ function Login() {
     const credentials = Object.fromEntries(new FormData(e.target))
     const { data } = await post({ url: '/auth/login', body: credentials })
     console.log(data)
-    // if (data) return navigate('/todos')
+    if (data) return navigate('/todos')
   }
 
   return (

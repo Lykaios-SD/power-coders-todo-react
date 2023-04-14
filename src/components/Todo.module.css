@@ -1,0 +1,29 @@
+.todo_item{
+    display: flex;
+}
+
+.iconLink {
+
+}
+
+.icon {
+    height: 1.2em;
+    position: relative;
+    top: 3px;
+    margin-right: .5em;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.trashButton {
+    border: none;
+    background: none;
+}
+
+.trashCan {
+    height: 1.2em;
+    flex-grow: 0;
+
+}

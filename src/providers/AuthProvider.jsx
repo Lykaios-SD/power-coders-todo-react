@@ -18,9 +18,9 @@ const AuthProvider = ({ children }) => {
         return setCurrentUser(null)
     }
 
-    useEffect(() => {
-      console.log({currentUser})
-    }, [currentUser])
+    // useEffect(() => {
+    //   console.log({currentUser})
+    // }, [currentUser])
     
 
     const authValues = useMemo(() => {

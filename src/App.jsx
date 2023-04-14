@@ -6,12 +6,14 @@ import { PrivateRoutes } from "./components/PrivateRoutes.jsx"
 import Index from "./views/index.jsx"
 import Login from "./views/login.jsx"
 import Todos from "./views/todos.jsx"
+import Notifications from "./components/Notifications.jsx"
 
 function App() {
   
   return (
     <>
     <NavBar/>
+    <Notifications/>
     <Routes>
       <Route path="/" element= {<Index />} />
       <Route path="/login" element= {<Login />} />
